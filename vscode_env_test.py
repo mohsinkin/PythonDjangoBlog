@@ -17,3 +17,4 @@ def greet(who_to_greet):
 # print(greet('Mohsin'))
 r = requests.get("https://google.com")
 print(r.status_code)
+print(r.ok)
