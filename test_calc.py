@@ -11,4 +11,4 @@ class Calc:
 class TestCalc(unittest.TestCase):
     def test_add(self):
         sum = Calc()
-        self.assertEqual(sum.add(10, 5), 10)
+        self.assertEqual(sum.add(10, 5), 15)
