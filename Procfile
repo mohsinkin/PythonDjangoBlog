@@ -1,1 +1,1 @@
-web: gunicorn PythonDjangoBlog.wsgi
+web: gunicorn reflections_django.wsgi
