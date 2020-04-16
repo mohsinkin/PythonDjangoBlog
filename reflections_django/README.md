@@ -1,1 +1,2 @@
-"# PythonDjangoBlog" 
+Python Django Test Blog
+
