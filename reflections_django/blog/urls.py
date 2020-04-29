@@ -24,6 +24,7 @@ from .views import (
 )
 from . import views
 
+# These URls are available to your hostname/
 urlpatterns = [
     path("", PostListView.as_view(), name="blog-home"),
     path("user/<username>", UserPostListView.as_view(), name="user-posts"),
