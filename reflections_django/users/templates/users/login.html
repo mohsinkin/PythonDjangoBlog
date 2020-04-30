@@ -9,12 +9,12 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Login</button>
+                <button id=login_button class="btn btn-outline-info" type="submit">Login</button>
             </div>
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Need an Account? <a class="ml-2" href="{% url 'register' %}">Register Now</a>
+                Need an Account? <a id=register_link class="ml-2" href="{% url 'register' %}">Register Now</a>
             </small>
         </div>
     </div>
