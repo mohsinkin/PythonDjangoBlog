@@ -15,7 +15,7 @@ from page_objects.LoginPage import LoginPage
 class LoginTest(unittest.TestCase):
     base_URL = "https://moss-blog.herokuapp.com/login"
     username = "test_headless"
-    password = '<test password here>'
+    password = 'Testing!@'
     driver = webdriver.Chrome(
         executable_path=r"C:\Users\mohsi.MOSSOSAURUSPC\Downloads\chromedriver.exe"
     )
