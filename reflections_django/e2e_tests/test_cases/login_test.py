@@ -33,10 +33,14 @@ class LoginTest(unittest.TestCase):
         self.assertEqual(
             self.driver.title, "Reflections", "Webpage Title does not match!"
         )
+        login_page_instance.click_logout()
+        logout_messsage = login_page_instance.get_logout_message()
+        self.assertEqual(
+            logout_messsage.text, "You have been logged out."
+        )
 
     @classmethod
     def tearDownClass(cls):
-        cls.driver.close()
         cls.driver.quit()
 
 
