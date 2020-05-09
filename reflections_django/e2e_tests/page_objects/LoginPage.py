@@ -29,4 +29,4 @@ class LoginPage:
         self.driver.find_element_by_id(self.logout_button).click()
 
     def get_logout_message(self):
-        return self.driver.find_element_by_xpath(self.logout_message_xpath);
+        return self.driver.find_element_by_xpath(self.logout_message_xpath).text;
