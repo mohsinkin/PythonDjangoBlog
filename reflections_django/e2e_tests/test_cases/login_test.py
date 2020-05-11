@@ -1,23 +1,24 @@
-import unittest
+import sys
 import time
+import unittest
+
+sys.path.append("/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/")
+
+from selenium import webdriver
 
 import HtmlTestRunner
-from selenium import webdriver
-import sys
+from custom_page_objects.LoginPage import LoginPage
 
-sys.path.append(
-    r"C:\Users\mohsi.MOSSOSAURUSPC\PycharmProjects\PythonDjangoBlog\reflections_django\e2e_tests"
-)
 
-from page_objects.LoginPage import LoginPage
+
 
 
 class LoginTest(unittest.TestCase):
     base_URL = "https://moss-blog.herokuapp.com/login"
     username = "test_headless"
-    password = 'Testing!@'
+    password = "Testing!@"
     driver = webdriver.Chrome(
-        executable_path=r"C:\Users\mohsi.MOSSOSAURUSPC\Downloads\chromedriver.exe"
+        executable_path="/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/drivers/chromedriver"
     )
 
     @classmethod
@@ -35,9 +36,7 @@ class LoginTest(unittest.TestCase):
         )
         login_page_instance.click_logout()
         logout_messsage = login_page_instance.get_logout_message()
-        self.assertEqual(
-            logout_messsage, "You have been logged out."
-        )
+        self.assertEqual(logout_messsage, "You have been logged out.")
 
     @classmethod
     def tearDownClass(cls):
@@ -48,6 +47,6 @@ class LoginTest(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main(
         testRunner=HtmlTestRunner.HTMLTestRunner(
-            report_title="E2E Test Results", output=".\\reports"
+            report_title="E2E Test Results", output="../reports"
         )
     )

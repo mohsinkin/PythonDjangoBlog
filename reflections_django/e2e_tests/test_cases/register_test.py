@@ -1,22 +1,22 @@
-import unittest
+import sys
 import time
+import unittest
+
+sys.path.append("/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/")
+
+from selenium import webdriver
 
 import HtmlTestRunner
-from selenium import webdriver
-import sys
+from custom_page_objects.RegisterPage import RegisterPage
 
-sys.path.append(
-    r"C:\Users\mohsi.MOSSOSAURUSPC\PycharmProjects\PythonDjangoBlog\reflections_django\e2e_tests"
-)
 
-from page_objects.RegisterPage import RegisterPage
 
 
 class RegisterTest(unittest.TestCase):
     base_URL = "https://moss-blog.herokuapp.com/register"
     username = "test_register"
-    password = 'Testing!@'
-    email = 'register@example.com'
+    password = "Testing!@"
+    email = "register@example.com"
     driver = webdriver.Chrome(
         executable_path=r"C:\Users\mohsi.MOSSOSAURUSPC\Downloads\chromedriver.exe"
     )
@@ -40,8 +40,10 @@ class RegisterTest(unittest.TestCase):
             self.driver.title, "Reflections", "Webpage Title does not match!"
         )
         self.assertEqual(
-            register_message, f"Account created for {self.username}! You are now able to login."
+            register_message,
+            f"Account created for {self.username}! You are now able to login.",
         )
+
     @classmethod
     def tearDownClass(cls):
         cls.driver.close()
