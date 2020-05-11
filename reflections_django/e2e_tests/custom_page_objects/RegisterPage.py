@@ -9,9 +9,8 @@ class RegisterPage:
     sign_up_button_id = "sign_up"
 
     # messages
-    register_message_xpath = '/html/body/main/div/div[1]/div[1]'
+    register_message_xpath = "/html/body/main/div/div[1]/div[1]"
 
-    
     def __init__(self, driver):
         self.driver = driver
 
@@ -28,11 +27,13 @@ class RegisterPage:
         password_box.send_keys(password)
 
     def set_password_confirmation(self, password):
-        password_confirm_box = self.driver.find_element_by_name(self.confirm_password_name)
+        password_confirm_box = self.driver.find_element_by_name(
+            self.confirm_password_name
+        )
         password_confirm_box.send_keys(password)
 
     def click_signup(self):
         self.driver.find_element_by_id(self.sign_up_button_id).click()
 
     def get_register_message(self):
-        return self.driver.find_element_by_xpath(self.register_message_xpath).text;
+        return self.driver.find_element_by_xpath(self.register_message_xpath).text
