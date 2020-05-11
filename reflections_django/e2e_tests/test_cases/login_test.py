@@ -3,22 +3,20 @@ import time
 import unittest
 
 sys.path.append("/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/")
+sys.path.append("/Users/mosster/PythonDjangoBlog/reflections_django/project_env/lib/python3.8/site-packages")
 
 from selenium import webdriver
 
 import HtmlTestRunner
 from custom_page_objects.LoginPage import LoginPage
 
-
-
-
-
+print(sys.path)
 class LoginTest(unittest.TestCase):
     base_URL = "https://moss-blog.herokuapp.com/login"
     username = "test_headless"
     password = "Testing!@"
     driver = webdriver.Chrome(
-        executable_path="/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/drivers/chromedriver"
+        executable_path="/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/drivers/chromedriver",
     )
 
     @classmethod

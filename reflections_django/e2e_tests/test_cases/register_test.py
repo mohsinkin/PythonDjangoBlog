@@ -11,7 +11,6 @@ from custom_page_objects.RegisterPage import RegisterPage
 
 
 
-
 class RegisterTest(unittest.TestCase):
     base_URL = "https://moss-blog.herokuapp.com/register"
     username = "test_register"
