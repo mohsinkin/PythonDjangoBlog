@@ -3,6 +3,7 @@ import time
 import unittest
 
 sys.path.append("/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/")
+sys.path.append("/Users/mosster/PythonDjangoBlog/reflections_django/project_env/lib/python3.8/site-packages")
 
 from selenium import webdriver
 
@@ -17,7 +18,7 @@ class RegisterTest(unittest.TestCase):
     password = "Testing!@"
     email = "register@example.com"
     driver = webdriver.Chrome(
-        executable_path=r"C:\Users\mohsi.MOSSOSAURUSPC\Downloads\chromedriver.exe"
+        executable_path="/Users/mosster/PythonDjangoBlog/reflections_django/e2e_tests/drivers/chromedriver",
     )
 
     @classmethod
